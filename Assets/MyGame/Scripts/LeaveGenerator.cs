@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class LeaveGenerator : MonoBehaviour
 {
     Vector3[] colliderVertexPos;
+    [SerializeField]
     List<Vector3> contactPoints = new List<Vector3>();
 
     void Start()
@@ -29,7 +31,6 @@ public class LeaveGenerator : MonoBehaviour
     }
     void OnDrawGizmos()
     {
-        // Draws the Light bulb icon at position of the object.
         // Because we draw it inside OnDrawGizmos the icon is also pickable
         // in the scene view.
         colliderVertexPos = GetColliderVertexPositions();
