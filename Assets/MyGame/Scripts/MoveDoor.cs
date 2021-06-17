@@ -22,6 +22,7 @@ public class MoveDoor : MonoBehaviour
     {
         transform.position += new Vector3(0, Mathf.Lerp(0, 0.4f, t), 0);
         t += 0.04f * Time.deltaTime;
+        GetComponent<AudioSource>().Play();
     }
     void MoveDown()
     {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 [ExecuteInEditMode]
 public class LeaveGenerator : MonoBehaviour
@@ -8,7 +9,11 @@ public class LeaveGenerator : MonoBehaviour
     Vector3[] colliderVertexPos;
     [SerializeField]
     List<Vector3> contactPoints = new List<Vector3>();
-
+    Vector3 startingPoint;
+    [SerializeField]
+    int generations = 1;
+    int generationsCounter;
+    float offsetY = 0.25f;
     void Start()
     {
         colliderVertexPos = GetColliderVertexPositions();
@@ -57,11 +62,43 @@ public class LeaveGenerator : MonoBehaviour
         {
             contactPoints.Add(collision.GetContact(i).point);
         }
-        Debug.Log("Collision stay");
+        GetStartPoint();
+        GenerateBranches();
     }
     void OnCollisionExit(Collision collision)
     {
         contactPoints.Clear();
     }
+    void GetStartPoint()
+    {
+        float highestY = 0;
+        Vector3 centerPoint = this.transform.position;
+        foreach (Vector3 v3 in contactPoints)
+        {
+            if (highestY < v3.y)
+            {
+                highestY = v3.y;
+            }
+        }
+        startingPoint = new Vector3(centerPoint.x, highestY + offsetY, centerPoint.z);
+    }
+    void GenerateBranches()
+    {
+        if (generationsCounter == 0)
+        {
+            CreateEmpty(startingPoint);
+            generationsCounter++;
+        }
+        if (generationsCounter < generations)
+        {
+            //build more
+        }
 
+    }
+    void CreateEmpty(Vector3 pos)
+    {
+        var go = new GameObject("node");
+        go.transform.position = pos;
+        go.transform.SetParent(transform);
+    }
 }

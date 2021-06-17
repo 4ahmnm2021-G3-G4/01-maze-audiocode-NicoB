@@ -14,11 +14,12 @@ public class PlayBirdSound : MonoBehaviour
     }
     IEnumerator CountDownRand()
     {
-        yield return new WaitForSeconds(Random.Range(4, 15));
+        yield return new WaitForSeconds(Random.Range(30, 40));
         PlaySound();
     }
     void PlaySound()
     {
         audioSource.clip = audioClips[Random.Range(0, audioClips.Count - 1)];
+        audioSource.Play();
     }
 }

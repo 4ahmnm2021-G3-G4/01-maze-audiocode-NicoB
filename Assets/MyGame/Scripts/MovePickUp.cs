@@ -17,4 +17,8 @@ public class MovePickUp : MonoBehaviour
         //set the object's Y to the new calculated Y
         transform.position = new Vector3(pos.x, newY * height + pos.y, pos.z);
     }
+    public void Collected()
+    {
+        Destroy(this.gameObject);
+    }
 }
