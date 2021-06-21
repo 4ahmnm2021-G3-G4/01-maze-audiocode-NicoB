@@ -70,4 +70,15 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
+/[Aa]ssets/SteamVR/
+/[Aa]ssets/SteamVR_Input/
+/[Aa]ssets/SteamVR_Resources/
+/[Aa]ssets/StreamingAssets/
+/[Aa]ssets/ResonanceAudio/
+
+Assets/ResonanceAudio.meta
+Assets/SteamVR.meta
+Assets/SteamVR_Input.meta
+Assets/SteamVR_Resources.meta
+Assets/StreamingAssets.meta
 !/[Aa]ssets/**/*.meta

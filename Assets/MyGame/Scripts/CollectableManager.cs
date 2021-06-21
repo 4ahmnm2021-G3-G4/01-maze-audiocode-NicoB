@@ -10,6 +10,8 @@ public class CollectableManager : MonoBehaviour
     AudioSource pickUpAudioS;
     [SerializeField]
     GameObject door2GO;
+    [SerializeField]
+    GameObject keyGO;
     public void ItemCollected(bool isKey)
     {
         if (isKey)
@@ -21,6 +23,10 @@ public class CollectableManager : MonoBehaviour
             coinCounter++;
         }
         pickUpAudioS.Play();
+        if (coinCounter == 3)
+        {
+            keyGO.SetActive(true);
+        }
         if (keyCollected && coinCounter == 3)
         {
             door2GO.GetComponent<MoveDoor>().openDoor = true;
