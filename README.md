@@ -29,8 +29,8 @@ Tested on Oculus Rift S
 Screenshots (concept and experience), Video
 
 ### Third party material: 
-https://free3d.com/3d-model/-circular-grass-patch-v1--883049.html
-https://www.turbosquid.com/3d-models/3d-assets-tree-grass-rocks-1498368
+- Ground: https://free3d.com/3d-model/-circular-grass-patch-v1--883049.html
+- Coins and Key: https://www.turbosquid.com/3d-models/3d-assets-tree-grass-rocks-1498368
 
 ### Project state: 
 95%/100% finished
