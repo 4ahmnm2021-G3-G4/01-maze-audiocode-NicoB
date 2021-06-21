@@ -441,6 +441,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &413289082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 125964, guid: dc06161b6d97feb419f45f03b62e14b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 574879269}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &574879269
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1447,7 +1453,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: -0.2959876, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &868647596
 Animation:
   m_ObjectHideFlags: 0
@@ -1477,6 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGO: {fileID: 1695249849}
+  playerHeigthGO: {fileID: 413289082}
 --- !u!1 &936803005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,25 +1639,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020386969}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b040c731e3388f0438fe0ca585c246b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colliderVertexPos:
-  - {x: 8.272, y: 3.384, z: 1.792}
-  - {x: 9.272, y: 3.384, z: 1.792}
-  - {x: 9.272, y: 3.384, z: 2.792}
-  - {x: 8.272, y: 3.384, z: 2.792}
-  - {x: 8.272, y: 4.384, z: 1.792}
-  - {x: 9.272, y: 4.384, z: 1.792}
-  - {x: 9.272, y: 4.384, z: 2.792}
-  - {x: 8.272, y: 4.384, z: 2.792}
   contactPoints: []
-  startingPoint: {x: 0, y: 0, z: 0}
   generations: 1
-  generationsCounter: 0
-  offsetY: 0.25
 --- !u!4 &1020386971
 Transform:
   m_ObjectHideFlags: 0

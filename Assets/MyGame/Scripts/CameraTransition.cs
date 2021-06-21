@@ -22,22 +22,22 @@ public class CameraTransition : MonoBehaviour
     }
     void Update()
     {
+        //Vector3 publicPos = playerHeigthGO.transform.TransformPoint(playerHeigthGO.transform.position);
         float posPlayerX = playerHeigthGO.transform.position.x;
         float posPlayerY = playerHeigthGO.transform.position.y;
         float posPlayerZ = playerHeigthGO.transform.position.z;
         //Resetting
-        animClip.SetCurve("", typeof(Transform), "localPosition.x", null);
-        animClip.SetCurve("", typeof(Transform), "localPosition.y", null);
-        animClip.SetCurve("", typeof(Transform), "localPosition.z", null);
-        // Z Pos
-        Keyframe[] keysz;
-        keysz = new Keyframe[4];
-        keysz[0] = new Keyframe(0f, 3.28f);
-        keysz[1] = new Keyframe(0.39f, 3.28f);
-        keysz[2] = new Keyframe(1.3f, -7.4363f);
-        keysz[3] = new Keyframe(2.1f, posPlayerZ);
-        var curvez = new AnimationCurve(keysz);
-        animClip.SetCurve("", typeof(Transform), "localPosition.z", curvez);
+        animClip.SetCurve("", typeof(Transform), "´m_LocalPosition", null);
+        animClip.SetCurve("", typeof(Transform), "´m_LocalRotation", null);
+        // X Pos 
+        Keyframe[] keysx;
+        keysx = new Keyframe[4];
+        keysx[0] = new Keyframe(0f, 3f);
+        keysx[1] = new Keyframe(0.39f, 3f);
+        keysx[2] = new Keyframe(1.3f, -0.50241f);
+        keysx[3] = new Keyframe(2.1f, posPlayerX);
+        var curvex = new AnimationCurve(keysx);
+        animClip.SetCurve("", typeof(Transform), "localPosition.x", curvex);
         // Y Pos 
         Keyframe[] keysy;
         keysy = new Keyframe[4];
@@ -47,30 +47,37 @@ public class CameraTransition : MonoBehaviour
         keysy[3] = new Keyframe(2.1f, posPlayerY);
         var curvey = new AnimationCurve(keysy);
         animClip.SetCurve("", typeof(Transform), "localPosition.y", curvey);
-        // X Pos 
-        Keyframe[] keysx;
-        keysx = new Keyframe[4];
-        keysx[0] = new Keyframe(0f, 3f);
-        keysx[1] = new Keyframe(0.39f, 3f);
-        keysx[2] = new Keyframe(1.3f, -0.50241f);
-        keysx[3] = new Keyframe(2.1f, pos);
-        var curvex = new AnimationCurve(keysx);
-        animClip.SetCurve("", typeof(Transform), "localPosition.x", curvex);
+        // Z Pos
+        Keyframe[] keysz;
+        keysz = new Keyframe[4];
+        keysz[0] = new Keyframe(0f, 3.28f);
+        keysz[1] = new Keyframe(0.39f, 3.28f);
+        keysz[2] = new Keyframe(1.3f, -7.4363f);
+        keysz[3] = new Keyframe(2.1f, posPlayerZ);
+        var curvez = new AnimationCurve(keysz);
+        animClip.SetCurve("", typeof(Transform), "localPosition.z", curvez);
         // X Rot
-        /*Keyframe[] keysxr;
-        keysxr = new Keyframe[3];
-        keysxr[0] = new Keyframe(0f, 0f);
-        keysxr[1] = new Keyframe(0.39f, 0f);
-        keysxr[2] = new Keyframe(1.3f, 45f);
-        keysxr[2] = new Keyframe(2.1f, 0f);
+        Keyframe[] keysxr;
+        keysxr = new Keyframe[2];
+
+        Quaternion eulerToQuatStart = Quaternion.Euler(0f, 0f, 90f);
+        float xEulerStart = eulerToQuatStart.eulerAngles.x;
+        Quaternion eulerToQuatEnd = Quaternion.Euler(0f, 0f, 0f);
+        float xEulerToQuatEnd = eulerToQuatEnd.eulerAngles.x;
+
+        keysxr[0] = new Keyframe(0f, xEulerStart);
+        //keysxr[1] = new Keyframe(0.39f, 0.9f);
+        //keysxr[2] = new Keyframe(1.3f, 0.45f);
+        keysxr[1] = new Keyframe(2.1f, xEulerToQuatEnd);
         var curvexr = new AnimationCurve(keysxr);
-        animClip.SetCurve("", typeof(Transform), "localRotation.x", curvexr);*/
+        Debug.Log(xEulerToQuatEnd + " " + eulerToQuatEnd.eulerAngles.x);
+        animClip.SetCurve("", typeof(Transform), "localRotation.x", curvexr);
     }
 
     IEnumerator WaitForAnim()
     {
         yield return new WaitForSeconds(lenght);
         playerGO.GetComponent<Player>().enabled = true;
-        this.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }
