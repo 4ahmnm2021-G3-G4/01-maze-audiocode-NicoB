@@ -29,13 +29,15 @@ Tested on Oculus Rift S
 Screenshots (concept and experience), Video
 
 ### Third party material: 
-(if used Fonts, Sounds, Music, Graphics, Materials, Code etc.)
+https://free3d.com/3d-model/-circular-grass-patch-v1--883049.html
+https://www.turbosquid.com/3d-models/3d-assets-tree-grass-rocks-1498368
 
 ### Project state: 
-2%/100% finished
+95%/100% finished
 <progress max="100" value="2"></progress>
 
 ### Limitations: 
+Collider: Collision Points don't work as expected
 
 ### Lessons Learned: 
 
