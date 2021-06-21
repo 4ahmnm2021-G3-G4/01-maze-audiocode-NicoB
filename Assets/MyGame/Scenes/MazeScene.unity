@@ -817,17 +817,17 @@ GameObject:
   - component: {fileID: 756364286}
   - component: {fileID: 756364285}
   - component: {fileID: 756364284}
-  - component: {fileID: 756364282}
   - component: {fileID: 756364289}
   - component: {fileID: 756364288}
   - component: {fileID: 756364290}
+  - component: {fileID: 756364282}
   m_Layer: 0
   m_Name: AudioKey
   m_TagString: Untagged
   m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &756364281
 Transform:
   m_ObjectHideFlags: 0
@@ -836,15 +836,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 756364280}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.81, y: -0.218, z: -0.46}
+  m_LocalPosition: {x: -3.81, y: -0.757, z: -0.46}
   m_LocalScale: {x: 67.070595, y: 67.070595, z: 67.070595}
   m_Children:
   - {fileID: 182835492}
   m_Father: {fileID: 955526430}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &756364282
-SphereCollider:
+--- !u!64 &756364282
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -853,9 +853,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7230796161561921262, guid: f3294a791b6d4b94990c357af8bbb073, type: 3}
 --- !u!114 &756364284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1636,8 +1637,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b040c731e3388f0438fe0ca585c246b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliderVertexPos:
+  - {x: 8.272, y: 3.384, z: 1.792}
+  - {x: 9.272, y: 3.384, z: 1.792}
+  - {x: 9.272, y: 3.384, z: 2.792}
+  - {x: 8.272, y: 3.384, z: 2.792}
+  - {x: 8.272, y: 4.384, z: 1.792}
+  - {x: 9.272, y: 4.384, z: 1.792}
+  - {x: 9.272, y: 4.384, z: 2.792}
+  - {x: 8.272, y: 4.384, z: 2.792}
   contactPoints: []
+  startingPoint: {x: 0, y: 0, z: 0}
   generations: 1
+  generationsCounter: 0
+  offsetY: 0.25
 --- !u!4 &1020386971
 Transform:
   m_ObjectHideFlags: 0
@@ -1855,10 +1868,10 @@ GameObject:
   - component: {fileID: 1164993393}
   - component: {fileID: 1164993392}
   - component: {fileID: 1164993391}
-  - component: {fileID: 1164993395}
   - component: {fileID: 1164993397}
   - component: {fileID: 1164993396}
   - component: {fileID: 1164993398}
+  - component: {fileID: 1164993394}
   m_Layer: 0
   m_Name: Audio1Coin
   m_TagString: Untagged
@@ -2135,8 +2148,8 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
---- !u!135 &1164993395
-SphereCollider:
+--- !u!64 &1164993394
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2145,9 +2158,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7230796161561921262, guid: f3294a791b6d4b94990c357af8bbb073, type: 3}
 --- !u!23 &1164993396
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2285,10 +2299,10 @@ GameObject:
   - component: {fileID: 1190861405}
   - component: {fileID: 1190861404}
   - component: {fileID: 1190861403}
-  - component: {fileID: 1190861401}
   - component: {fileID: 1190861408}
   - component: {fileID: 1190861407}
   - component: {fileID: 1190861409}
+  - component: {fileID: 1190861401}
   m_Layer: 0
   m_Name: Audio1Coin (4)
   m_TagString: Untagged
@@ -2310,8 +2324,8 @@ Transform:
   m_Father: {fileID: 955526430}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1190861401
-SphereCollider:
+--- !u!64 &1190861401
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2320,9 +2334,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7230796161561921262, guid: f3294a791b6d4b94990c357af8bbb073, type: 3}
 --- !u!114 &1190861403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2622,7 +2637,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190861399}
-  m_Mesh: {fileID: -7633896560097655829, guid: f3294a791b6d4b94990c357af8bbb073, type: 3}
+  m_Mesh: {fileID: -7230796161561921262, guid: f3294a791b6d4b94990c357af8bbb073, type: 3}
 --- !u!114 &1190861409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,10 +3486,10 @@ GameObject:
   - component: {fileID: 1778336808}
   - component: {fileID: 1778336807}
   - component: {fileID: 1778336806}
-  - component: {fileID: 1778336804}
   - component: {fileID: 1778336811}
   - component: {fileID: 1778336810}
   - component: {fileID: 1778336812}
+  - component: {fileID: 1778336804}
   m_Layer: 0
   m_Name: Audio1Coin (3)
   m_TagString: Untagged
@@ -3496,8 +3511,8 @@ Transform:
   m_Father: {fileID: 955526430}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1778336804
-SphereCollider:
+--- !u!64 &1778336804
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3506,9 +3521,10 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7230796161561921262, guid: f3294a791b6d4b94990c357af8bbb073, type: 3}
 --- !u!114 &1778336806
 MonoBehaviour:
   m_ObjectHideFlags: 0

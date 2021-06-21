@@ -14,6 +14,7 @@ public class CollectableManager : MonoBehaviour
     GameObject keyGO;
     [SerializeField]
     GameObject keyHighlightGO;
+    bool openDoor;
     public void ItemCollected(bool isKey)
     {
         if (isKey)
@@ -33,16 +34,18 @@ public class CollectableManager : MonoBehaviour
         if (keyCollected && coinCounter == 3)
         {
             door2GO.GetComponent<MoveDoor>().openDoor = true;
+            openDoor = true;
         }
     }
     IEnumerator SwitchKeyOnAndOff()
     {
-        yield return new WaitForSeconds(1);
-        Debug.Log("1");
-        keyHighlightGO.SetActive(false);
-        yield return new WaitForSeconds(1);
-        Debug.Log("2");
-        keyHighlightGO.SetActive(true);
-        StartCoroutine("SwitchKeyOnAndOff");
+        if (openDoor)
+        {
+            yield return new WaitForSeconds(1);
+            keyHighlightGO.SetActive(false);
+            yield return new WaitForSeconds(1);
+            keyHighlightGO.SetActive(true);
+            StartCoroutine("SwitchKeyOnAndOff");
+        }
     }
 }
