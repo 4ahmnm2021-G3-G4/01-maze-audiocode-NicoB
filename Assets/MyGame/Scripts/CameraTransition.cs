@@ -59,19 +59,24 @@ public class CameraTransition : MonoBehaviour
         // X Rot
         Keyframe[] keysxr;
         keysxr = new Keyframe[2];
-
-        Quaternion eulerToQuatStart = Quaternion.Euler(0f, 0f, 90f);
-        float xEulerStart = eulerToQuatStart.eulerAngles.x;
-        Quaternion eulerToQuatEnd = Quaternion.Euler(0f, 0f, 0f);
-        float xEulerToQuatEnd = eulerToQuatEnd.eulerAngles.x;
-
-        keysxr[0] = new Keyframe(0f, xEulerStart);
-        //keysxr[1] = new Keyframe(0.39f, 0.9f);
-        //keysxr[2] = new Keyframe(1.3f, 0.45f);
-        keysxr[1] = new Keyframe(2.1f, xEulerToQuatEnd);
+        keysxr[0] = new Keyframe(0f, 90f);
+        keysxr[1] = new Keyframe(2.1f, 0f);
         var curvexr = new AnimationCurve(keysxr);
-        Debug.Log(xEulerToQuatEnd + " " + eulerToQuatEnd.eulerAngles.x);
         animClip.SetCurve("", typeof(Transform), "localRotation.x", curvexr);
+        // Y Rot
+        Keyframe[] keysyr;
+        keysyr = new Keyframe[2];
+        keysyr[0] = new Keyframe(0f, 0f);
+        keysyr[1] = new Keyframe(2.1f, 0f);
+        var curveyr = new AnimationCurve(keysyr);
+        animClip.SetCurve("", typeof(Transform), "localRotation.y", curveyr);
+        // Z Rot
+        Keyframe[] keyszr;
+        keyszr = new Keyframe[2];
+        keyszr[0] = new Keyframe(0f, 0f);
+        keyszr[1] = new Keyframe(2.1f, 0f);
+        var curvezr = new AnimationCurve(keyszr);
+        animClip.SetCurve("", typeof(Transform), "localRotation.z", curvezr);
     }
 
     IEnumerator WaitForAnim()
